@@ -20,7 +20,7 @@ disp('....Complete Linkage Agglomarative Algorithm....');
  while 1
           
         [l,z]=min_dist(ty);
-        [ty,z] = mini_swap(ty,l,z);
+        [ty,z] = max_swap(ty,l,z);
         if(l>z) te=l;
                 l=z;
                 z=te;
@@ -34,6 +34,7 @@ disp('....Complete Linkage Agglomarative Algorithm....');
         disp('After Reducing Dimension:');
         [ty]= delete(ty,z);
         [d,e]=size(ty);
+         disp(ty);
         disp(' Dcl = ');
         disp(ty);
           
@@ -42,6 +43,13 @@ disp('....Complete Linkage Agglomarative Algorithm....');
          break;
         end
  end
+ 
+    
+%     Z=[1.0  2.0 .5; 5.0 6.0 1.0; 2.0 3.0 2.0; 1.0 2.0 2.0616; 2.0 3.0 6.1033; 1.0 2.0 8.3815];
+    
+%     leafOrder = optimalleaforder(Z,nu);
+%     dendrogram(Z,'Reorder',leafOrder)
+% %    dendrogram(Z);
 end
 
 
@@ -53,7 +61,7 @@ end
 
 
 
- function [ty,z] = mini_swap(ty,l,z)
+ function [ty,z] = max_swap(ty,l,z)
        
     [o,p] = size(ty);  
      for j=1:o
@@ -77,7 +85,7 @@ mino=999999999999999;
                  end
             end
       end
-disp('Minimum value between cluster: ');
+disp('Maximum value between cluster: ');
   disp(l);
   disp(z);
 end
