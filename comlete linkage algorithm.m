@@ -7,7 +7,7 @@ disp('....Complete Linkage Agglomarative Algorithm....');
     [m,n]= size(N);
     for i=1:m 
            for j=1:m
-                mini_dist =(N(i,1)-N(j,1))^2 +(N(i,2)-N(j,2))^2; % finding minimum distant each point
+                mini_dist =(N(i,1)-N(j,1))^2 +(N(i,2)-N(j,2))^2; % finding distant each point
     
                     mini_dist = sqrt(mini_dist);
                     ty(i,j)=mini_dist;
